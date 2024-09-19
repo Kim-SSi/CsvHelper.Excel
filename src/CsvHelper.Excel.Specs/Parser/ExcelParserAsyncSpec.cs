@@ -94,21 +94,21 @@ namespace CsvHelper.Excel.Specs.Parser
         }
         
         [Fact]
-        public async void TheResultsAreNotNull()
+        public async Task TheResultsAreNotNull()
         {
             await RunAsync();
             Results.Should().NotBeNull();
         }
 
         [Fact]
-        public async void TheResultsAreCorrect()
+        public async Task TheResultsAreCorrect()
         {
             await RunAsync();
             Values.Should().BeEquivalentTo(Results, options => options.IncludingProperties());
         }
 
         [Fact]
-        public async void RowsHaveData()
+        public async Task RowsHaveData()
         {
             var csvConfiguration = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
